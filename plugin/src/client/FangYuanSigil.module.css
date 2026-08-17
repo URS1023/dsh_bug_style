@@ -1,0 +1,75 @@
+.sigil {
+  position: absolute;
+  right: clamp(16px, 2vw, 32px);
+  bottom: clamp(18px, 2.4vh, 30px);
+  display: flex;
+  align-items: flex-end;
+  gap: 9px;
+  color: var(--dsw-alias-label-secondary);
+  font-family: var(--dsw-font-family);
+  letter-spacing: 0.16em;
+  opacity: 0.86;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 2px 8px var(--dsw-alias-bg-mask-3));
+  animation: sigil-arrive 480ms var(--ds-ease-in-out) both;
+}
+
+.cicada,
+.name,
+.motto {
+  writing-mode: vertical-rl;
+}
+
+.cicada {
+  padding: 8px 5px;
+  border: 1px solid var(--dsw-alias-border-l3);
+  border-radius: 999px;
+  color: var(--dsw-alias-state-success-primary);
+  background: var(--dsw-alias-bg-layer-2);
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.name {
+  padding: 9px 6px;
+  border-radius: 3px;
+  background: var(--dsw-alias-state-error-primary);
+  color: var(--dsw-alias-label-primary);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.motto {
+  padding-bottom: 3px;
+  color: var(--dsw-alias-label-tertiary);
+  font-size: 10px;
+  line-height: 14px;
+}
+
+@keyframes sigil-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@media (max-width: 720px) {
+  .sigil {
+    right: 12px;
+    bottom: 14px;
+    gap: 6px;
+    opacity: 0.7;
+  }
+
+  .motto {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sigil {
+    animation: none;
+  }
+}
