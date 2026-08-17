@@ -152,7 +152,7 @@ index 0000000000000000000000000000000000000000..dad50402e15449dfb474b657d4000b66
 +源码树会同时保留 WebP 及其编码后的浏览器表示，并由一致性测试保护。自定义主题不会成为持久化外观选项；选择内置主题后，需要重新加载或重新挂载角色插件才能再次激活它。
 diff --git a/apps/web/tests/fang-yuan-theme.e2e.ts b/apps/web/tests/fang-yuan-theme.e2e.ts
 new file mode 100644
-index 0000000000000000000000000000000000000000..4c1d859684fcf199ac50fec1172e7251109d3dff
+index 0000000000000000000000000000000000000000..58a8597a57754bc8de5e52505c98d4c9ffeb48a2
 --- /dev/null
 +++ b/apps/web/tests/fang-yuan-theme.e2e.ts
 @@ -0,0 +1,122 @@
@@ -259,7 +259,7 @@ index 0000000000000000000000000000000000000000..4c1d859684fcf199ac50fec1172e7251
 +      `brand wordmark: ${result.brands.wordmark?.label}`,
 +      `brand hero: ${result.brands.hero?.label}`,
 +      `brand hero badge: ${result.brands.hero?.badge}`,
-+      `brand agent icon only: ${String(result.brands.agent?.label === '' && Boolean(result.brands.agent?.symbol))}`,
++      `brand agent icon only: ${String(result.brands.agent?.label === '' && (result.brands.agent?.symbol ?? false))}`,
 +      `agent mode preserved: ${result.agentMode}`,
 +      `brand access: ${result.brands.access?.label}`,
 +      `brand workspace: ${result.brands.workspace?.label}`,
