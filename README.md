@@ -17,10 +17,13 @@ An opt-in **蛊真人 / 古月方源** visual plugin for DeepSeek Harness. This 
 
 ## Use it in a DeepSeek Harness checkout
 
-The target checkout must be a compatible DeepSeek Harness source tree. From its repository root:
+Clone this plugin repository beside a compatible DeepSeek Harness source tree, then run the commands from the Harness repository root:
 
 ```powershell
-git apply deepseek-harness-fang-yuan.patch
+git clone https://github.com/URS1023/dsh_bug_style.git
+git clone https://github.com/deepseek-ai/deepseek-harness.git
+Set-Location deepseek-harness
+git apply ../dsh_bug_style/deepseek-harness-fang-yuan.patch
 pnpm install
 pnpm run build
 pnpm dsh --profile web --patch examples/web-fang-yuan/cordis.yml

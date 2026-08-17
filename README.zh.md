@@ -17,10 +17,13 @@
 
 ## 在 DeepSeek Harness 工作区中使用
 
-目标工作区必须是兼容版本的 DeepSeek Harness 源码树。在其仓库根目录执行：
+将本插件仓库与兼容版本的 DeepSeek Harness 源码树放在同级目录，然后在 Harness 仓库根目录执行：
 
 ```powershell
-git apply deepseek-harness-fang-yuan.patch
+git clone https://github.com/URS1023/dsh_bug_style.git
+git clone https://github.com/deepseek-ai/deepseek-harness.git
+Set-Location deepseek-harness
+git apply ../dsh_bug_style/deepseek-harness-fang-yuan.patch
 pnpm install
 pnpm run build
 pnpm dsh --profile web --patch examples/web-fang-yuan/cordis.yml
